@@ -1,14 +1,18 @@
 <template>
   <div class="home">
-    <div class="card">
-      <div class="card-body">
+    <div class="card mt-5 mb-5">
+      <div class="card-body form-group">
         <h2 class="card-title">ToDo List</h2>
-        <input type="text" v-model="newItem" class="mb-4">
-        <button @click="postItem" class="btn btn-outline-primary btn-sm ml-5">追加</button>
+        <div class="mb-4">
+          <input type="text" v-model="newItem" class="col-sm-8">
+          <button @click="postItem" class="btn btn-outline-primary btn-sm mt-2 mb-2 ml-5">追加</button>
+        </div>
         <div v-for="(data,index) in items" :key="index">
-          <input type="text" v-model="data.item" class="mb-2">
-          <button @click="putItem(data.id, data.item)" class="btn btn-outline-warning btn-sm ml-5">更新</button>
-          <button @click="deleteItem(data.id)" class="btn btn-outline-danger btn-sm ml-2">削除</button>
+          <div class="mb-2">
+            <input type="text" v-model="data.item" class="mb-1 col-sm-6">
+            <button @click="putItem(data.id, data.item)" class="btn btn-outline-warning btn-sm ml-5">更新</button>
+            <button @click="deleteItem(data.id)" class="btn btn-outline-danger btn-sm ml-2">削除</button>
+          </div>
         </div>
       </div>
     </div>
